@@ -1,0 +1,10 @@
+<section class="agreements" id="agreements">
+    <div class="container">
+        <div class="owl-carousel" id="agreements-carousel">
+            <div ng-repeat="certificat in certifications" ng-repeat-owl-carousel carousel-init="carouselInitializer">
+                <!--owl-item-->
+                <agreement-owl-item owl-data="certificat"></agreement-owl-item>
+            </div>
+        </div>
+    </div>
+</section>

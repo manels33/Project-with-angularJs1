@@ -1,0 +1,123 @@
+<div class="bubblingG" ng-class="{'showLoading': loading}" ng-show="loading">
+    <div class="bubblingGMain">
+            <span id="bubblingG_1">
+         </span>
+            <span id="bubblingG_2">
+         </span>
+            <span id="bubblingG_3">
+         </span>
+        <h3>Loading</h3>
+    </div>
+</div>
+<!-- menu-wrap Section -->
+<div class="menu-wrap">
+    <div class="mobile_logo">
+        <img src="assets/images/logo.png" alt="">
+    </div>
+    <nav class="menu">
+        <div class="icon-list">
+            <a ng-repeat="menuItem in menuList" href="#{{menuItem.href}}" du-smooth-scroll><span>{{menuItem.text}}</span></a>
+        </div>
+    </nav>
+    <div class="mobile-lang">
+        <span ng-repeat="lang in language" ng-bind="lang.langCode" ng-class="{'active': lang.active}"></span>
+    </div>
+    <button class="close-button" id="close-button">Close Menu</button>
+</div>
+<!-- header Section -->
+<sticky-header></sticky-header>
+<!-- agreements Section -->
+<agreements></agreements>
+<!-- presentation Section -->
+<section class="presentation" id="presentation">
+    <div class="container">
+        <h2>Présentation
+            <div class="since">SINCE 1980</div>
+        </h2>
+        <div class="col-md-5  col-sm-12">
+            <div class="img-intro">
+                <img ng-src="assets/images/{{presentation.image.src}}" alt="{{presentation.image.alt}}" class="img-responsive"/>
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-6 col-sm-12">
+            <h3>{{presentation.title}}</h3>
+            <h4>{{presentation.sub_title}}</h4>
+            <p>{{presentation.description}}</p>
+        </div>
+    </div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="cd-main-content" parallax-background parallax-ratio="0.2">
+    <portfolio></portfolio>
+</section>
+<!-- infrastructure Section -->
+<section class="infrastructure" id="infrastructure" parallax-background parallax-ratio="0.2">
+    <div class="container">
+        <h2>Infrastructure et ressources
+            <div class="since">Responsabilité et efficacité</div>
+        </h2>
+        <div class="row margin-bottom">
+            <div class="col-md-5 col-sm-12 arrow_inner">
+                <div class="arrow">
+                    <img src="assets/images/arrow.png" alt=""/>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 icons">
+                <img ng-src="assets/images/{{infrastructure.image.src}}" alt="{{infrastructure.image.alt}}" class="img-responsive"/>
+            </div>
+            <div class="col-md-4 col-sm-12 bloc_infra">
+                <div class="h2_infrac">{{infrastructure.title}}</div>
+                <div class="h3_infrac">{{infrastructure.sub_title}}</div>
+                <ul class="list_infra">
+                    <li ng-repeat="domain in infrastructure.domains"><span>{{domain.number}}</span> {{domain.name}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3  col-sm-12 icons">
+                <img ng-src="assets/images/{{equipments.image.src}}" alt="{{equipments.image.alt}}" class="img-responsive"/>
+            </div>
+            <div class="col-md-4  col-sm-12 bloc_infra">
+                <div class="h2_infrac">{{equipments.title}}</div>
+                <ul class="list_infra">
+                    <li ng-repeat="equipment in equipments.domains"><span>{{equipment.number}}</span> {{equipment.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- personnels Section -->
+<section class="personnels" id="personnels">
+    <div class="container">
+        <h2>Personnel permanent</h2>
+        <p> La ressource la plus importante de l'EKK est le niveau de ses ressources humaines.
+            <br> L'entreprise dispose d'un potentiel humain permanent plus de 600 personnes réparties en: </p>
+        <div id="owl_personels" class="owl-carousel">
+            <div ng-repeat="personnel in personnels" ng-repeat-owl-carousel carousel-init="carouselInitializer2">
+                <!--owl-item-->
+                <personnel-owl-item owl-data="personnel"></personnel-owl-item>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- md-contact Section -->
+<section class="md-contact clearfix" id="contact" parallax-background parallax-ratio="0.2">
+    <contact-form></contact-form>
+</section>
+<!-- map_location Section -->
+<section class="map_location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.4488534091915!2d10.185688615499759!3d36.85567367993718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34b46f9a2f95%3A0x869b148df6f345df!2s37+Avenue+Habib+Bourguiba%2C+Tunis%2C+Tunisie!5e0!3m2!1sfr!2sfr!4v1481207060417"
+                width="100%" height="260" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
+<!-- footer Section -->
+<footer class="footer">
+    <div class="container">
+        <p>Copyright © 2016 EKK Entreprise Khaled KOBBI.
+            <br> Tous droits réservés. Développé par <a href="http://www.mdsoft-int.com/" target="_blank"><span>MDWEB</span></a></p>
+    </div>
+</footer>
+<!-- Block Back Top -->
+<div class="back-top" style="display: none;">
+    <a class="back-top-button" href="#page-top" du-smooth-scroll></a>
+</div>
+<!-- /Block Back Top -->

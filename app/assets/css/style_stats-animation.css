@@ -1,0 +1,163 @@
+/*-- chiffres
+-------------------------------*/
+
+.space-left { margin-right: 3%;}
+
+.underlay {
+  stroke-width: 5;
+  fill: transparent;
+/*  stroke-linecap: round; */
+  stroke-linejoin: round;
+  stroke: #06cecc;
+}
+
+.chart-circle {
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+
+#circle-graph-1 , #circle-graph-3, #circle-graph-2{
+  stroke: #bba90b;
+  stroke-width: 4;
+  fill: transparent;
+  stroke-linejoin: round;
+}
+
+
+.charts-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 1024px;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+   -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+#circle-1 ,#circle-2, #circle-3 {	 
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	-khtml-border-radius: 100%;
+	-o-border-radius: 100%;
+	-ms-border-radius: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+	   
+.chart {
+  position: relative;
+  height: auto;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+.chart.circle {
+  padding:0;
+}
+
+@media screen and (max-width: 700px) {
+  .chart {
+ 
+  }
+}
+@media screen and (min-width: 700px) {
+  .chart {
+
+  }
+}
+
+.title {
+  font-size: 22px; 
+  color:#C09;
+  margin-bottom: 12px;
+}
+
+.chart-circle {
+  display: inline-block;
+  position: relative;
+}
+
+.chart-svg {
+  position: relative;
+}
+/* les num inside the circle */
+.circle-percentage {
+  position: absolute;
+  color: #bba90b;
+  font-size: 60px;
+  @include RobotoBlack ();
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+   -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 480px) {
+  .circle-percentage {
+    font-size: 32px;
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.chart-line {
+  width: 80%;
+}
+
+.valueX {
+  font-size: 14px;
+}
+
+.chart-values {
+  text-align: right;
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+}
+
+.h-value {
+  -moz-transition: ease-in-out 700ms;
+  -o-transition: ease-in-out 700ms;
+  -ms-transition: ease-in-out 700ms;
+  -webkit-transition: ease-in-out 700ms;
+  
+  transition: ease-in-out 700ms;
+  opacity: 0;
+}
+.h-value.visible {
+  opacity: 1;
+}
+
+.percentage-value {
+  -moz-transition: ease-in-out 700ms;
+  -o-transition: ease-in-out 700ms;
+  -webkit-transition: ease-in-out 700ms;
+    -ms-transition: ease-in-out 700ms;
+  transition: ease-in-out 700ms;
+  color: #48c15e;
+  margin-top: 2px;
+  opacity: 0;
+}
+.percentage-value.negative {
+  color: #ef6670;
+}
+.percentage-value.visible {
+  opacity: 1;
+}

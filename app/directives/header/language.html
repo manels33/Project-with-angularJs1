@@ -1,0 +1,8 @@
+<div class="langue">
+    <div class="active-language">
+        <a href="" ng-repeat="lang in language | filter:{ active : true}" ng-class="{'active' : lang.active}" ng-bind="lang.langCode"></a>
+    </div>
+    <div class="language-select">
+        <a href="" ng-repeat="lang in language | filter:{ active : false}" ng-class="{'active' : lang.active}" ng-click="setActiveLang(lang)"  ng-bind="lang.langCode"></a>
+    </div>
+</div>

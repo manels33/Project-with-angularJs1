@@ -1,0 +1,62 @@
+<div class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="sort-container">
+                <div class="col-xs-12">
+                    <!--title-block-->
+                    <div class="title-block">
+                        <h4>NOs projets</h4>
+                        <p>+100 project</p>
+                    </div>
+                    <!-- cd-tab-filter-wrapper -->
+                    <div class="cd-tab-filter-wrapper">
+                        <div class="cd-tab-filter">
+                            <ul class="cd-filters">
+                                <li class="filter" ng-click="setActiveSlide1()"><a href="" ng-class="{ 'selected' : active === 1}">En
+                                    cours</a></li>
+                                <li class="filter" ng-click="setActiveSlide2()"><a href=""  ng-class="{ 'selected' : active === 2}">Réalisés</a>
+                                </li>
+                            </ul>
+                            <!-- cd-filters -->
+                        </div>
+                        <!-- cd-tab-filter -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" ng-repeat="project in portfolio">
+                        <div class="mix inprogress">
+                            <img ng-src="assets/images/{{project.image.src}}" alt="{{project.image.alt}}"
+                                 class="img-responsive">
+                            <div class="mix-overlay">
+                                <div class="mix-overlay-inner">
+                                    <div class="mix-overlay-warpper">
+                                        <h4>{{project.projectName}}</h4>
+                                        <h3>{{project.location}}</h3>
+                                        <p ng-repeat="info in project.informations">
+                                            {{info.title}} : <span>{{info.description}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date-overlayer">
+                                <p>{{project.date.month | convertToMonth}}
+                                    <br> {{ project.date.year }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</div>

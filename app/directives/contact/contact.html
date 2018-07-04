@@ -1,0 +1,109 @@
+<div class="container">
+    <h2>LAISSER UN MESSAGE</h2>
+    <h3>Nous vous contacterons dès que possible</h3>
+    <div class="row contact_top">
+        <div class="col-md-4 col-xs-12" ng-repeat="contactItem in contactInfo">
+            <div class="contact-infos">
+                <div class="col-sm-12 col-xs-3 mycolstest12 table_cel">
+                    <div class="icon fa" ng-class="contactItem.iconClass"></div>
+                </div>
+                <div class="col-sm-12 col-xs-9 mycolstest12 table_cel">
+                    <h4>{{contactItem.title}}</h4>
+                    <p><span  ng-repeat="item in contactItem.info">{{item}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-form">
+        <form action="POST" name="userForm" id="contactForm" class="form-horizontal"
+              ng-submit="submitForm(userForm.$valid);recaptcha()" novalidate>
+            <div class="row">
+                <!-- Prénom -->
+                <div class="col-sm-6 col-xs-12 feedback-group">
+                    <div class="form-group"
+                         ng-class="{ 'has-feedback has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine , 'has-feedback has-success' : userForm.lastName.$valid}">
+
+                        <span>Prénom *</span>
+                        <input type="text" name="lastName" class="form-control" ng-model="formFeilds.lastName" required
+                               autocomplete="off" id="lastName" placeholder="Prénom">
+                        <i ng-class="{'form-control-feedback fa fa-times' : userForm.lastName.$invalid && !userForm.lastName.$pristine === true , 'form-control-feedback fa fa-check' : userForm.lastName.$valid === true}"></i>
+                        <!--<p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="help-block">lastname is required.</p>-->
+                    </div>
+                </div>
+                <!-- Nom -->
+                <div class="col-sm-6 col-xs-12 feedback-group">
+                    <div class="form-group"
+                         ng-class="{ 'has-feedback has-error' : userForm.name.$invalid && !userForm.name.$pristine , 'has-feedback has-success' : userForm.name.$valid}">
+                        <span>Nom *</span>
+                        <input type="text" name="name" class="form-control" ng-model="formFeilds.name" required
+                               autocomplete="off" id="name" placeholder="Nom">
+                        <i ng-class="{'form-control-feedback fa fa-times' : userForm.name.$invalid && !userForm.name.$pristine === true , 'form-control-feedback fa fa-check' : userForm.name.$valid === true}"></i>
+                        <!--<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Name is required.</p>-->
+                    </div>
+                </div>
+                <!-- Téléphone -->
+                <div class="col-sm-6 col-xs-12 feedback-group">
+                    <div class="form-group"
+                         ng-class="{ 'has-feedback has-error' : userForm.phone.$invalid && !userForm.phone.$pristine , 'has-feedback has-success' : userForm.phone.$valid}">
+                        <span>Téléphone *</span>
+                        <input type="text" name="phone" class="form-control" ng-model="formFeilds.phone" required
+                               autocomplete="off" id="phone" placeholder="Téléphone" ng-pattern="/^([()\- x+]*\d[()\- x+]*){4,16}$/">
+                        <i ng-class="{'form-control-feedback fa fa-times' : userForm.phone.$invalid && !userForm.phone.$pristine === true , 'form-control-feedback fa fa-check' : userForm.phone.$valid === true}"></i>
+                        <!--<p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block">Name is required.</p>-->
+                    </div>
+                </div>
+                <!-- EMAIL -->
+                <div class="col-sm-6 col-xs-12 feedback-group">
+                    <div class="form-group"
+                         ng-class="{ 'has-feedback has-error' : userForm.email.$invalid && !userForm.email.$pristine , 'has-feedback has-success' : userForm.email.$valid}">
+                        <span>Email *</span>
+                        <input type="email" name="email" class="form-control" ng-model="formFeilds.email" required
+                               autocomplete="off" id="email" placeholder="email">
+                        <i ng-class="{'form-control-feedback fa fa-times' : userForm.email.$invalid && !userForm.email.$pristine === true , 'form-control-feedback fa fa-check' : userForm.email.$valid === true}"></i>
+                        <!--<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Adress mail non valide</p>-->
+                    </div>
+                </div>
+                <!-- Sujet -->
+                <div class="col-xs-12 feedback-group">
+                    <div class="form-group"
+                         ng-class="{ 'has-feedback has-error' : userForm.subject.$invalid && !userForm.subject.$pristine , 'has-feedback has-success' : userForm.subject.$valid}">
+                        <span>Sujet *</span>
+                        <input type="text" name="subject" class="form-control" ng-model="formFeilds.subject" required
+                               autocomplete="off" id="subject" placeholder="Sujet">
+                        <i ng-class="{'form-control-feedback fa fa-times' : userForm.subject.$invalid && !userForm.subject.$pristine === true , 'form-control-feedback fa fa-check' : userForm.subject.$valid === true}"></i>
+                        <!--<p ng-show="userForm.subject.$invalid && !userForm.subject.$pristine" class="help-block">lastname is required.</p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Message -->
+                <div class="col-xs-12 feedback-group textarea-grp">
+                    <div class="form-group"
+                         ng-class="{ 'has-feedback has-error' : userForm.message.$invalid && !userForm.message.$pristine , 'has-feedback has-success' : userForm.message.$valid}">
+                        <span>Message *</span>
+                            <textarea name="message" class="form-control textarea" ng-model="formFeilds.message" required
+                                      autocomplete="off" id="message" placeholder="message"
+                                      ng-maxlength="100"></textarea>
+                            <i ng-class="{'form-control-feedback fa fa-times' : userForm.message.$invalid && !userForm.message.$pristine === true , 'form-control-feedback fa fa-check' : userForm.message.$valid === true}"></i>
+                        <!--<p ng-show="userForm.message.$error.maxlength" class="help-block">Username is too long.</p>-->
+                        <!--<p ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block">Message is required.</p>-->
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 clearfix">
+                    <div class=" form-group feedback-group">
+                        <!--<div class="g-recaptcha" vc-recaptcha-->
+                             <!--key="'6LfHlw8UAAAAAEum7YmzMuGAT_zQ-QflRTdaLFqR'"></div>-->
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 clearfix">
+                    <div class=" form-group feedback-group">
+                        <button class="btn btn-red" ng-disabled="userForm.$invalid" ng-click="preventDefault($event)" progress-button="progressFunction()">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 clearfix">
+                <span class="required">(*) Champs Obligatoires</span>
+            </div>
+        </form>
+    </div>
+</div>
